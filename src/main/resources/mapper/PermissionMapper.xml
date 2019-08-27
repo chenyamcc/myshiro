@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.mapper.PermissionMapper">
+  <resultMap id="BaseResultMap" type="com.chen.entity.Permission">
+    <!--@mbg.generated-->
+    <id column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="pname" jdbcType="VARCHAR" property="pname" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="percode" jdbcType="VARCHAR" property="percode" />
+    <result column="parentpid" jdbcType="INTEGER" property="parentpid" />
+    <result column="parentpids" jdbcType="VARCHAR" property="parentpids" />
+    <result column="sortstring" jdbcType="VARCHAR" property="sortstring" />
+    <result column="available" jdbcType="CHAR" property="available" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    pid, pname, `type`, url, percode, parentpid, parentpids, sortstring, available
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from permission
+    where pid = #{pid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from permission
+    where pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.chen.entity.Permission">
+    <!--@mbg.generated-->
+    insert into permission (pid, pname, `type`, 
+      url, percode, parentpid, 
+      parentpids, sortstring, available
+      )
+    values (#{pid,jdbcType=INTEGER}, #{pname,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{percode,jdbcType=VARCHAR}, #{parentpid,jdbcType=INTEGER}, 
+      #{parentpids,jdbcType=VARCHAR}, #{sortstring,jdbcType=VARCHAR}, #{available,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chen.entity.Permission">
+    <!--@mbg.generated-->
+    insert into permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="pname != null">
+        pname,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="percode != null">
+        percode,
+      </if>
+      <if test="parentpid != null">
+        parentpid,
+      </if>
+      <if test="parentpids != null">
+        parentpids,
+      </if>
+      <if test="sortstring != null">
+        sortstring,
+      </if>
+      <if test="available != null">
+        available,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="pname != null">
+        #{pname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="percode != null">
+        #{percode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentpid != null">
+        #{parentpid,jdbcType=INTEGER},
+      </if>
+      <if test="parentpids != null">
+        #{parentpids,jdbcType=VARCHAR},
+      </if>
+      <if test="sortstring != null">
+        #{sortstring,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null">
+        #{available,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.chen.entity.Permission">
+    <!--@mbg.generated-->
+    update permission
+    <set>
+      <if test="pname != null">
+        pname = #{pname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="percode != null">
+        percode = #{percode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentpid != null">
+        parentpid = #{parentpid,jdbcType=INTEGER},
+      </if>
+      <if test="parentpids != null">
+        parentpids = #{parentpids,jdbcType=VARCHAR},
+      </if>
+      <if test="sortstring != null">
+        sortstring = #{sortstring,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null">
+        available = #{available,jdbcType=CHAR},
+      </if>
+    </set>
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.chen.entity.Permission">
+    <!--@mbg.generated-->
+    update permission
+    set pname = #{pname,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      percode = #{percode,jdbcType=VARCHAR},
+      parentpid = #{parentpid,jdbcType=INTEGER},
+      parentpids = #{parentpids,jdbcType=VARCHAR},
+      sortstring = #{sortstring,jdbcType=VARCHAR},
+      available = #{available,jdbcType=CHAR}
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+</mapper>

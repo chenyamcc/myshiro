@@ -1,0 +1,50 @@
+.span-menu{
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+    background-color: #e1e1e1;
+    color: #333333;
+    cursor: pointer;
+}
+.span-menu:hover{
+    background-color: #f2f2f2;
+}
+.no-left-padding{
+    padding-left:0;
+}
+.left-padding{
+    padding-left:20px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: show;
+}
+.nomargin{
+    margin-top:0;
+    margin-bottom:0;
+}
+.select{
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+}
+.checkbox{
+    height: 15px;
+    width: 15px;
+    display: inline;
+    vertical-align: middle;
+    margin-top:0px;
+}
+.li{
+    line-height: 24px;
+}
+.span-menu a{
+    display: inline-block;
+    height: 30px;
+    width:100%;
+    line-height: 30px;
+}
